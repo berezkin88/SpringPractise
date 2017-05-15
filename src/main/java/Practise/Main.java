@@ -2,15 +2,14 @@ package Practise;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 /**
  * Created by Alexander on 14/05/2017.
  */
-@Component
 public class Main {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(Main.class);
@@ -19,9 +18,8 @@ public class Main {
 
 
 public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         applicationContext.getBean("main", Main.class).start();
-
     }
 
     private void start() {
@@ -33,7 +31,6 @@ public static void main(String[] args) {
         numbersController.execute().forEach(System.out::println);
     }
 
-    @Autowired
     public void setNumbersController(NumbersController numbersController) {
         this.numbersController = numbersController;
     }

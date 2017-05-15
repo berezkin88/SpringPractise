@@ -2,12 +2,11 @@ package Practise.DAO.Implementations;
 
 import Practise.DAO.SumAndSubtraction;
 import Practise.Model.Numbers;
-import org.springframework.stereotype.Component;
+
 
 /**
  * Created by Alexander on 14/05/2017.
  */
-@Component
 public class SaSImpl implements SumAndSubtraction {
 
     @Override

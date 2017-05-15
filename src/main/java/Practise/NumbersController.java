@@ -6,17 +6,14 @@ import Practise.DAO.SumAndSubtraction;
 import Practise.Model.Numbers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Alexander on 14/05/2017.
  */
-@Component
+
 public class NumbersController {
 
     private Comparing comparing;
@@ -29,7 +26,6 @@ public class NumbersController {
     public NumbersController() {
     }
 
-//    @PostConstruct
     public List<Numbers> init(){
 
         Numbers numbers1 = new Numbers(2, 4);
@@ -67,7 +63,7 @@ public class NumbersController {
         return comparing;
     }
 
-    @Autowired
+
     public void setComparing(Comparing comparing) {
         this.comparing = comparing;
     }
@@ -76,7 +72,7 @@ public class NumbersController {
         return multiplicationAndDivision;
     }
 
-    @Autowired
+
     public void setMultiplicationAndDivision(MultiplicationAndDivision multiplicationAndDivision) {
         this.multiplicationAndDivision = multiplicationAndDivision;
     }
@@ -85,7 +81,7 @@ public class NumbersController {
         return sumAndSubtraction;
     }
 
-    @Autowired
+
     public void setSumAndSubtraction(SumAndSubtraction sumAndSubtraction) {
         this.sumAndSubtraction = sumAndSubtraction;
     }
