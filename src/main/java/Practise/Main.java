@@ -18,7 +18,7 @@ public class Main {
 
 
 public static void main(String[] args) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class, AppConfAspect.class);
         applicationContext.getBean("main", Main.class).start();
     }
 
